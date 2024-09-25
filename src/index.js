@@ -38,4 +38,13 @@ dom.watch()
 
 import './components/activeMenu.js'
 
+window.rci2_layout = {
+    infoTweetTitle: '', // Title for Twitter share
+    infoMapHeader: '', // Header for the shared content
+    mainLocation: document.location, // The main URL to share
+    infoHeaderTweet: '#EurostatRYB #Eurostat', // Hashtags for Twitter
+    shareMail: '', // Subject for the email share
+    shareMailBody: '', // Body for the email share
+}
+
 export { dorling } from './dorling.js'

@@ -6,14 +6,6 @@
  *
  *   Desc:   Creates a menu button that opens a menu of actions using aria-activedescendants
  */
-const rci2_layout = {
-    infoTweetTitle: '', // Title for Twitter share
-    infoMapHeader: '', // Header for the shared content
-    mainLocation: document.location, // The main URL to share
-    infoHeaderTweet: '#EurostatRYB #Eurostat', // Hashtags for Twitter
-    shareMail: '', // Subject for the email share
-    shareMailBody: '', // Body for the email share
-}
 
 class MenuButtonActionsActiveDescendant {
     constructor(domNode, performMenuAction) {
