@@ -314,7 +314,10 @@ export function dorling() {
 
         if (out.standalone_) {
             addStandaloneToDOM()
-            generateEmbed()
+            generateEmbed(out.standalone_.embedURL)
+            $('#embed-copy-button').on('click', function () {
+                copyUrlToClipboard(out.standalone_.embedURL)
+            })
             generateTwitterLink()
             generateFacebook()
         } else {
@@ -3099,13 +3102,8 @@ export function dorling() {
 
     //standalone stuff
     const generateTwitterURL = require('./components/twitter.js').generateURL
-    function generateEmbed() {
-        $('#embed-content').html(
-            '<pre class="pre-scrollable"><code>&lt;iframe frameborder="0" height="600px" scrolling="no" width="100%" src="' +
-                out.standalone_.embedURL +
-                '"&gt;&lt;/iframe&gt;</code></pre>'
-        )
-    }
+    const generateEmbed = require('./components/embed.js').generateEmbedContent
+    const copyUrlToClipboard = require('./components/embed.js').copyUrlToClipboard
     function generateTwitterLink() {
         let text
         if (out.standalone_.twitterText) {

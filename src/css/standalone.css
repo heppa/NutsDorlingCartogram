@@ -122,23 +122,6 @@ div#navItems {
     border-radius: 3px;
 }
 
-#codeEmbed {
-    width: 800px;
-    height: 80px;
-    position: absolute;
-    left: 130px;
-    top: 110px;
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #ccc;
-    padding: 10px;
-    display: none;
-    font-size: 12px;
-    word-wrap: break-word;
-    line-height: 20px;
-    font-family: Courier;
-}
-
 #top-bar {
     display: flex;
     flex-direction: row;

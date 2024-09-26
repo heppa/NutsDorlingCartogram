@@ -17,7 +17,7 @@ import './css/styles.css'
 import './css/bootstrap-override.css'
 import './css/spinner.css'
 import './css/share-menu.css'
-// import './css/info-modal.css'
+import './css/embed-modal.css'
 
 // font awesome
 import { library, dom } from '@fortawesome/fontawesome-svg-core'

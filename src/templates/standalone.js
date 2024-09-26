@@ -68,21 +68,51 @@ module.exports = (infoText) => `
 <div id="global" class="container-fluid">
     <div id="embed-modal" data-role="dialog" class="modal fade">
         <div class="modal-dialog">
+
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" translate="embed.title">
-                        Copy this code and paste it in your Website:
+                    <h4 class="modal-title">Embed visualisation 
+                        <button	class="ecl-button ecl-button--tertiary ecl-button--icon-only" type="button" id="embed-copy-button">
+                            <span class="ecl-button__container">
+                                <!-- <span class="ecl-button__label" data-ecl-label="true">Copy</span> -->
+                                <svg class="ecl-icon ecl-icon--m ecl-button__icon" focusable="false" aria-hidden="true" data-ecl-icon>
+                                    <use xlink:href="../../assets/img/ecl-icons/icons.svg#copy"></use>
+                                </svg>
+                            </span>
+                        </button>
                     </h4>
-                    <button type="button" class="close" data-bs-dismiss="modal">
-                        &times;
+                    <button	class="ecl-button ecl-button--tertiary ecl-modal__close ecl-button--icon-only" type="button" data-bs-dismiss="modal">
+                        <span class="ecl-button__container">
+                            <!-- <span class="ecl-button__label" data-ecl-label="true">Close</span> -->
+                            <svg class="ecl-icon ecl-icon--m ecl-button__icon" focusable="false" aria-hidden="true" data-ecl-icon>
+                                <use xlink:href="../../assets/img/ecl-icons/icons.svg#close-filled"></use>
+                            </svg>
+                        </span>
                     </button>
                 </div>
                 <div class="modal-body" id="embed-content">
-                    <pre class="pre-scrollable"><code></code></pre>
+                    <div class="scrollable">&lt;iframe src="http://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter00_0/index.html" height="768" width="1000"&gt;&lt;/iframe&gt;</div>
                 </div>
                 <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button> -->
+                    <div id="embed-success-notification" class="ecl-notification ecl-notification--success" data-ecl-notification role="alert" data-ecl-auto-init="Notification">
+                        <svg class="ecl-icon ecl-icon--m ecl-notification__icon" focusable="false" aria-hidden="false" role="img">
+                            <title translate="embed.successTitle">Success</title>
+                            <use xlink:href="../../assets/img/ecl-icons/icons.svg#success"></use>
+                        </svg>
+                        <div class="ecl-notification__content">
+                            <div class="ecl-notification__title" translate="embed.successMessage">Code copied to clipboard.</div>
+                        </div>
+                    </div>
+                    <div id="embed-error-notification" class="ecl-notification ecl-notification--error" data-ecl-notification role="alert" data-ecl-auto-init="Notification">
+                        <svg class="ecl-icon ecl-icon--m ecl-notification__icon" focusable="false" aria-hidden="false" role="img">
+                            <title>Error</title>
+                            <use xlink:href="../../assets/img/ecl-icons/icons.svg#error"></use>
+                        </svg>
+                        <div class="ecl-notification__content">
+                            <div class="ecl-notification__title" translate="embed.errorMessage">The code could not be copied to the clipboard.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

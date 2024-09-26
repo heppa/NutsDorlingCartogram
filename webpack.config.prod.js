@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'production',
@@ -57,5 +58,9 @@ module.exports = {
         // new PurgeCSSPlugin({
         //   paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         // }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          }),
     ],
 }
